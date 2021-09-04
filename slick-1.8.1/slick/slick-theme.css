@@ -1,0 +1,285 @@
+@charset 'UTF-8';
+
+/* Slider */
+.slick-loading .slick-list {
+    background: #fff url('./ajax-loader.gif') center center no-repeat;
+}
+
+/* Icons */
+@font-face {
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('./fonts/slick.eot');
+    src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+    /* 實際的按鈕大小 (點擊後可以跳上下一張的範圍)*/
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+/* 觸碰到或聚焦到按鈕時，無字無色，無外框線，背景無色 */
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+    opacity: 1;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+    opacity: .25;
+}
+
+/* 預設的按鈕 */
+/* 是文字類型 */
+.slick-prev:before,
+.slick-next:before {
+    font-family: 'slick';
+    /* 如果要自訂按鈕樣式就把這個隱藏起來 */
+    /* 大小 顏色 調整 */
+    font-size: 50px;
+    line-height: 1;
+
+    opacity: .75;
+    color: #fff;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 按鈕的位置 */
+.slick-prev {
+    left: 15px;
+    z-index: 2;
+}
+
+[dir='rtl'] .slick-prev {
+    right: 15px;
+    left: auto;
+}
+
+.slick-prev:before {
+    content: '←';
+}
+
+[dir='rtl'] .slick-prev:before {
+    content: '→';
+}
+
+.slick-next {
+    right: 15px;
+}
+
+/* 按鈕的位置 */
+[dir='rtl'] .slick-next {
+    right: auto;
+    left: 15px;
+}
+
+.slick-next:before {
+    content: '→';
+}
+
+[dir='rtl'] .slick-next:before {
+    content: '←';
+}
+
+/* Dots */
+.slick-dotted.slick-slider {
+    margin-bottom: 30px;
+}
+
+/* 主體 包覆所有點*/
+.slick-dots {
+    position: absolute;
+    bottom: -35px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+
+/* 包覆著每個點的li，調整寬度會讓每個點之間的間隔變大 */
+/* 大小基本上和點的大小相同 */
+/* 可以設置top or left 等等改變點的位置 */
+.slick-dots li {
+    position: relative;
+
+    display: inline-block;
+    top: -50px;
+
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+
+/* 調整h和padding會影響整體點的位置 */
+/* 基本上不用動 */
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+/* 觸碰時沒有外邊線 */
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+    outline: none;
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+    opacity: 1;
+}
+
+/* 點的樣式 */
+.slick-dots li button:before {
+    font-family: 'slick';
+    /* 不想用預設的點樣式就把fz和color調整 */
+    /* 或者可以修改content裡面的內容 */
+    font-size: 20px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* 調整點的大小 */
+    /* 大小基本上和li一致 */
+    /* 如果需要可以用bgc自訂點的顏色 */
+    /* 也可以用bg引入精靈圖 */
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    /* 預設是淡色 */
+    /* 點擊後變深色 */
+    /* 可自由修改 */
+    opacity: .25;
+    color: #f1f1f1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+    /* 點擊後變深色 */
+    opacity: .75;
+    color: #fff;
+}
+
+.slick-quick-link {
+    position:relative;
+}
+
+.usj-slick .text-wrap {
+    background-color: #1c3385;
+}
+
+.usj-slick .text {
+    background-color: #1c3385;
+    color: #fff;
+    height: 200px;
+    padding: 20px 20px 50px;
+}
+
+.usj-slick .text h3 {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.usj-slick .text p {
+    font-size: 14px;
+}
+
+.usj-slick .small-pic {
+    display: block;
+}
+
+.usj-slick .big-pic {
+    display: none;
+}
+
+@media screen and (min-width: 992px) {
+    .slick-dotted.slick-slider {
+        margin-bottom: 100px;
+    }
+
+    .usj-slick .small-pic {
+        display: none;
+    }
+
+    .usj-slick .big-pic {
+        display: block;
+    }
+
+    .usj-slick .text h3 {
+        font-size: 40px;
+    }
+
+    .usj-slick .text p {
+        font-size: 20px;
+    }
+
+    .usj-slick .text-wrap {
+        background-color: #1c3385;
+        padding-bottom: 30px;
+    }
+
+}
