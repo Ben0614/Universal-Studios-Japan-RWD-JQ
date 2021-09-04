@@ -29,8 +29,11 @@
         nonce="goPzpIwM"></script>
 
     <!-- 頭部 -->
+    <!-- 設定高度，因為header fixed不佔位，下方元素會跑上來 -->
+    <!-- 桌機 螢幕下滑，header往上隱藏，header-wrap佔的高度要調整 -->
     <div class="header-wrap">
         <header>
+            <!-- header區域 -->
             <div class="header-area">
                 <div class="container">
                     <!-- 營業時間 -->
@@ -40,11 +43,14 @@
                     </div>
                     <!-- logo和購物車等等icon區域 -->
                     <div class="main">
+                        <!-- logo -->
                         <div class="logo">
                             <a href="index.html"><img src="./images/Universal-japan-logo-b.png" alt=""></a>
                         </div>
+                        <!-- 右側各式功能 -->
                         <div class="right">
                             <div class="service">
+                                <!-- 語言選擇區 -->
                                 <div>
                                     <a href="javascript:void(0)">
                                         日本語 <i class="fas fa-globe"></i>
@@ -60,12 +66,14 @@
                                 <p><a href="javascript:void(0)">交通アクセス <i class="fas fa-chevron-right"></i></a></p>
                                 <p><a href="javascript:void(0)">会員登録｜ログイン<i class="fas fa-chevron-right"></i></a></p>
                             </div>
+                            <!-- 桌機 營業時間 -->
                             <div class="service-time service-time-computer">
                                 <p> 本日の営業時間 <span>09:00~19:00</span></p>
                             </div>
                         </div>
 
                         <!-- 手機 -->
+                        <!-- icon -->
                         <div class="icon icon-mobile">
                             <div class="cart">
                                 <a href="javascript:void(0)">
@@ -77,6 +85,7 @@
                                     <i class="fas fa-search"></i>
                                 </a>
                             </div>
+                            <!-- 檢索區域，預設在畫面外，點擊時jq調回 -->
                             <div class="small-search">
                                 <div class="cross">
                                     <i class="fas fa-times"></i>
@@ -87,11 +96,13 @@
                                     <button><i class="fas fa-search"></i></button>
                                 </div>
                             </div>
+                            <!-- 漢堡選單 -->
                             <div class="ham">
                                 <a href="javascript:void(0)">
                                     <i class="fas fa-bars"></i>
                                 </a>
                             </div>
+                            <!-- 漢堡選單條 -->
                             <div class="ham-list">
                                 <div class="cross">
                                     <i class="fas fa-times"></i>
@@ -118,10 +129,13 @@
                                         </p>
                                     </li>
                                 </ul>
+                                <!-- 語言選擇 -->
+                                <!-- 用jq設定，如果點到該li，裡面的radio就 checked -->
+                                <!-- 預設點選日本語 -->
                                 <ul class="language">
                                     <li>
                                         <label for="japan">日本語</label>
-                                        <input type="radio" id="japan" name="language">
+                                        <input type="radio" id="japan" name="language" checked>
                                     </li>
                                     <li>
                                         <label for="english">English</label>
@@ -144,6 +158,9 @@
                     <!-- flex between 分成三塊-->
                     <!-- 手機 -->
                     <div class="buy-ticket buy-ticket-mobile">
+                        <!-- 點擊後跳出list -->
+                        <!-- 文字用.text()修改 -->
+                        <!-- icon用append和prepend添加新的 -->
                         <a href="javascript:void(0)">
                             <!-- icon -->
                             <div class="front">
@@ -155,6 +172,7 @@
                                 <i class="fas fa-angle-double-down"></i>
                             </div>
                         </a>
+                        <!-- 點擊後跳出 -->
                         <div class="list">
                             <div class="item">
                                 <div class="pic">
@@ -207,6 +225,7 @@
                     </div>
                 </div>
             </div>
+            <!-- 桌機 大搜索框-->
             <div class="big-search">
                 <div class="container">
                     <label for="search">檢索</label>
@@ -214,15 +233,18 @@
                     <button><i class="fas fa-search"></i></button>
                 </div>
             </div>
+
             <!-- 桌機 -->
+            <!-- navbar -->
             <div class="navbar-bg">
                 <div class="container">
                     <div class="navbar">
-                        <!-- 畫面下拉時出現logo -->
+                        <!-- 畫面下拉時出現logo 預設隱藏-->
                         <div class="logo">
                             <a href="index.html"><img src="./images/Universal-japan-logo-b.png" alt=""></a>
                         </div>
 
+                        <!-- flex排列 -->
                         <div class="left">
                             <div>
                                 <a href="javascript:void(0)">
@@ -273,7 +295,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="JAVASCRIPT:VOID(0)">
+                                <a href="javascript:void(0)">
                                     フード＆ グッズ
                                     <i class="fas fa-chevron-down"></i>
                                 </a>
@@ -298,7 +320,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="JAVASCRIPT:VOID(0)">
+                                <a href="javascript:void(0)">
                                     旅行プラン＆ホテル
                                     <i class="fas fa-chevron-down"></i>
                                 </a>
@@ -312,7 +334,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="JAVASCRIPT:VOID(0)">
+                                <a href="javascript:void(0)">
                                     チケット情報
                                     <i class="fas fa-chevron-down"></i>
                                 </a>
@@ -341,9 +363,12 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="right">
+                            <!-- 桌機的購票區域 -->
+                            <!-- 因為有白色背景，所以高度用padding推，避免白色區域看起來被壓縮 -->
                             <div class="buy-ticket buy-ticket-computer">
-                                <a href="JAVASCRIPT:VOID(0)">
+                                <a href="javascript:void(0)">
                                     <!-- icon -->
                                     <!-- 文字 -->
                                     <p>チケットを探す・購入する</p>
@@ -352,6 +377,7 @@
                                         <i class="fas fa-angle-double-down"></i>
                                     </div>
                                 </a>
+                                <!-- 購票選單條 -->
                                 <div class="list">
                                     <div class="item">
                                         <div class="pic">
@@ -402,7 +428,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <!-- icon區域 -->
                             <div class="icon icon-computer">
                                 <div class="cart">
                                     <a href="javascript:void(0)">
@@ -422,12 +448,15 @@
         </header>
     </div>
 
+    <!-- 輪播和快速連結區 -->
     <div class="slick-quick-link">
         <!-- 輪播 -->
         <div class="usj-slick">
             <div>
                 <!-- 圖片 -->
+                <!-- 手機 -->
                 <div class="small-pic"><img src="./images/usj-20th-no-limit-character-m.jpg" alt=""></div>
+                <!-- 桌機 -->
                 <div class="big-pic"><img src="./images/usj-20th-no-limit-character-a.jpg" alt=""></div>
                 <!-- 搭配的文字 -->
                 <!-- text-wrap 設置背景色 -->
@@ -447,9 +476,11 @@
             </div>
             <div>
                 <!-- 圖片 -->
+                <!-- 手機 -->
                 <div class="small-pic"><img src="./images/usj-super-nintendo-world-overall-view-we-are-mario-m.jpg"
                         alt="">
                 </div>
+                <!-- 桌機 -->
                 <div class="big-pic"><img src="./images/usj-super-nintendo-world-overall-view-we-are-mario-a.jpg"
                         alt="">
                 </div>
@@ -473,6 +504,8 @@
 
         <!-- 桌機版定位在這裡，防止可視窗高度改變時漂浮 -->
         <!-- link連結區 -->
+        <!-- 用border-radius和overflow切圓角 -->
+        <!-- 桌機用絕對定位定在輪播文字下方 -->
         <div class="quick-link">
             <div class="container">
                 <div class="item-group">
@@ -571,6 +604,7 @@
         </div>
     </div>
 
+    <!-- 警告注意區 -->
     <div class="alert">
         <div class="container">
             <div class="alert-area">
@@ -636,18 +670,22 @@
         </div>
     </div>
 
+    <!-- 主題活動介紹 -->
     <div class="pickup">
         <div class="container">
+            <!-- 標題 -->
             <h3 class="title">
                 ピックアップ
             </h3>
             <div class="item-group">
-
+                <!-- item -->
                 <div class="item">
+                    <!-- 圖片 -->
                     <div class="pic">
                         <a href="javascript:void(0)"><img src="./images/usj-super-nintendo-world-overall-view-c.jpg"
                                 alt=""></a>
                     </div>
+                    <!-- 文字 -->
                     <div class="text">
                         <p>
                             <a href="javascript:void(0)">
@@ -658,11 +696,15 @@
                             2021年3月18日（木）グランドオープン！
                         </p>
                     </div>
+                    <!-- 翻頁看詳細 -->
+                    <!-- 用linear-gradient的to bottom right 0到50%灰色 剩下藍色 -->
+                    <!-- 點擊後jq調用back -->
                     <div class="read">
                         <div class="circle">
                             <i class="fas fa-ellipsis-h"></i>
                         </div>
                     </div>
+                    <!-- 絕對定位後none -->
                     <div class="back">
                         <h4>『NO LIMIT! ハロウィーン』</h4>
                         <p>
@@ -673,9 +715,9 @@
                             限界突破の最恐ホラー＆熱狂体験あふれる、20周年のハロウィーン開催。
                         </p>
                         <div class="read-btn">
-                            <a href="JAVASCRIPT:VOID(0)">詳しくはこちら</a>
+                            <a href="javascript:void(0)">詳しくはこちら</a>
                         </div>
-
+                        <!-- 點擊後隱藏 -->
                         <div class="return">
                             <div class="arrow">
                                 <i class="fas fa-chevron-left"></i>
@@ -712,7 +754,7 @@
                             20周年だけのスペシャルなフェスティバル
                         </p>
                         <div class="read-btn">
-                            <a href="JAVASCRIPT:VOID(0)">詳しくはこちら</a>
+                            <a href="javascript:void(0)">詳しくはこちら</a>
                         </div>
 
                         <div class="return">
@@ -753,7 +795,7 @@
                             心揺さぶる“激闘”を、その身で体感せよ
                         </p>
                         <div class="read-btn">
-                            <a href="JAVASCRIPT:VOID(0)">詳しくはこちら</a>
+                            <a href="javascript:void(0)">詳しくはこちら</a>
                         </div>
 
                         <div class="return">
@@ -796,7 +838,7 @@
                             ARE MARIO!!」さあ、アソビの本能を解き放て！
                         </p>
                         <div class="read-btn">
-                            <a href="JAVASCRIPT:VOID(0)">詳しくはこちら</a>
+                            <a href="javascript:void(0)">詳しくはこちら</a>
                         </div>
 
                         <div class="return">
@@ -835,7 +877,7 @@
                             ユニバーサル・スタジオ・ジャパンの20周年が、ついに開幕！ テーマは、「NO LIMIT!」。超興奮、超感動体験の連続で、ココロとカラダを解き放ち、超元気になろう！
                         </p>
                         <div class="read-btn">
-                            <a href="JAVASCRIPT:VOID(0)">詳しくはこちら</a>
+                            <a href="javascript:void(0)">詳しくはこちら</a>
                         </div>
 
                         <div class="return">
@@ -871,7 +913,7 @@
                             ワンピースの世界を存分に楽しむ夏の一大イベント、今年も開催
                         </p>
                         <div class="read-btn">
-                            <a href="JAVASCRIPT:VOID(0)">詳しくはこちら</a>
+                            <a href="javascript:void(0)">詳しくはこちら</a>
                         </div>
 
                         <div class="return">
@@ -916,7 +958,7 @@
                             大好きな友だちと何度も遊べる最強パスで、思い出も絆も、ガツンととりもどせ！
                         </p>
                         <div class="read-btn">
-                            <a href="JAVASCRIPT:VOID(0)">詳しくはこちら</a>
+                            <a href="javascript:void(0)">詳しくはこちら</a>
                         </div>
 
                         <div class="return">
@@ -931,24 +973,33 @@
         </div>
     </div>
 
+    <!-- 有用情報區 -->
     <div class="info">
         <div class="container">
+            <!-- 標題 -->
             <h3 class="title">お役立ち情報</h3>
             <div class="item-group">
+                <!-- item -->
                 <div class="item">
+                    <!-- 圖片 -->
                     <div class="pic">
                         <img src="./images/usj-super-nintendo-world-st-c.jpg" alt="">
                     </div>
+                    <!-- 文字 -->
+                    <!-- 三個item的文字區都設定同樣高度，讓排版對期 -->
                     <div class="text">
                         <h4>スーパー・ニンテンドー・ワールド™　攻略ガイド</h4>
                         <p>マリオの世界を確実に楽しみつくすためのテッパン・ガイド！【基礎編】を公開中！</p>
                     </div>
+                    <!-- 詳細閱讀按鈕 -->
                     <div class="read-btn">
                         <a href="javascript:void(0)">詳しくはこちら</a>
                     </div>
                 </div>
 
+                <!-- 手機 -->
                 <!-- small 桌機隱藏 -->
+                <!-- 因為第一個item比較大，所以剩下兩個包起來另外排列 -->
                 <div class="small">
                     <div class="item">
                         <div class="pic">
@@ -977,6 +1028,7 @@
                 </div>
 
                 <!-- 桌機顯示 -->
+                <!-- 三個item都平均大 -->
                 <div class="item item-computer">
                     <div class="pic">
                         <img src="./images/usj-app-sample-c.jpg" alt="">
@@ -1006,10 +1058,14 @@
         </div>
     </div>
 
+    <!-- 橫條 -->
     <div class="about-banner">
         <div class="container">
             <div class="item-group">
+                <!-- item -->
                 <div class="item">
+                    <!-- pic座白色圓形 -->
+                    <!-- svg是裡面的圖形 -->
                     <div class="pic">
                         <tcm-anchor _ngcontent-ryw-c333="" _nghost-ryw-c41="" class="ng-star-inserted">
                             <!---->
@@ -1058,6 +1114,7 @@
                             <!---->
                         </tcm-anchor>
                     </div>
+                    <!-- 文字 -->
                     <div class="text">
                         <p>営業時間</p>
                     </div>
@@ -1230,22 +1287,28 @@
 
     </div>
 
+    <!-- 新聞區 -->
     <div class="news">
         <div class="container">
+            <!-- 大標題 -->
             <div class="big-title">
                 <h3>ニューストピックス</h3>
             </div>
             <div class="item-group">
-
+                <!-- item -->
+                <!-- 加border-bottom -->
                 <div class="item">
+                    <!-- 小標題 -->
                     <div class="title">
                         【公式Instagramをフォローするだけ！　#USJ グッズプレゼントキャンペーン】
                     </div>
+                    <!-- 內容 -->
                     <div class="content">
                         <p>
                             ユニバーサル・スタジオ・ジャパン公式Instagramアカウントをフォローしている方の中から、抽選で5名様にパークグッズをプレゼント！
                         </p>
                     </div>
+                    <!-- 閱讀詳細按紐 -->
                     <div class="read-btn">
                         <a href="javascript:void(0)">
                             詳しくはこちら
@@ -1329,6 +1392,7 @@
                     </div>
                 </div>
 
+                <!-- 看全部按紐 -->
                 <div class="read-all">
                     <a href="javascript:void(0)">
                         一覧を見る
@@ -1339,16 +1403,19 @@
         </div>
     </div>
 
+    <!-- 社群網站 -->
     <div class="sns-article">
         <div class="container">
+            <!-- twitter -->
             <div class="twitter">
+                <!-- flex水平 -->
                 <div class="title">
                     <p>
-                        <a href="JAVASCRIPT:VOID(0)">‎@USJ_Official</a>
+                        <a href="javascript:void(0)">‎@USJ_Official</a>
                         さんの
                         <span>ツイート</span>
                     </p>
-                    <a href="JAVASCRIPT:VOID(0)">
+                    <a href="javascript:void(0)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path class="icon" fill="#8899A6"
                                 d="M12 18.042c-.553 0-1-.447-1-1v-5.5c0-.553.447-1 1-1s1 .447 1 1v5.5c0 .553-.447 1-1 1z" />
@@ -1358,7 +1425,8 @@
                         </svg>
                     </a>
                 </div>
-
+                <!-- 嵌入內容 -->
+                <!-- content用overflow:scroll做成滑輪 -->
                 <div class="content">
                     <blockquote class="twitter-tweet">
                         <p lang="ja" dir="ltr">＼配信まであと1時間⏰／<br>『NO LIMIT! 情報局』の「綾小路麗華」が、ぶっ壊れる、最恐の <a
@@ -1376,74 +1444,81 @@
                     </blockquote>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
+                <!-- flex space-around -->
                 <div class="bottom">
-                    <p><a href="JAVASCRIPT:VOID(0)">埋め込む</a></p>
-                    <p><a href="JAVASCRIPT:VOID(0)">Twitterで表示</a></p>
+                    <p><a href="javascript:void(0)">埋め込む</a></p>
+                    <p><a href="javascript:void(0)">Twitterで表示</a></p>
                 </div>
 
             </div>
 
+            <!-- ig -->
             <div class="ig">
                 <div class="pic">
                     <img src="./images/usj-logo-instagram-c.jpg" alt="">
                 </div>
                 <div class="title">
-                    <a href="JAVASCRIPT:VOID(0)">公式Instagram</a>
+                    <a href="javascript:void(0)">公式Instagram</a>
                 </div>
                 <div class="content">
-                    <a href="JAVASCRIPT:VOID(0)">公式Instagramアカウントを「フォロー」して 最新情報をチェックしよう！</a>
+                    <a href="javascript:void(0)">公式Instagramアカウントを「フォロー」して 最新情報をチェックしよう！</a>
                 </div>
-
             </div>
+
+            <!-- fan -->
             <div class="fan">
                 <div class="pic">
                     <img src="./images/usj-usj-fan-c.jpg" alt="">
                 </div>
                 <div class="title">
-                    <a href="JAVASCRIPT:VOID(0)">「#USJファン」大募集！</a>
+                    <a href="javascript:void(0)">「#USJファン」大募集！</a>
                 </div>
                 <div class="content">
-                    <a href="JAVASCRIPT:VOID(0)">私たちと一緒に、 パークの魅力を発信いただける、 「#USJファン」大募集！！</a>
+                    <a href="javascript:void(0)">私たちと一緒に、 パークの魅力を発信いただける、 「#USJファン」大募集！！</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- 底部 -->
     <footer>
         <div class="container">
             <div class="sns-area">
+                <!-- fn按讚嵌入 -->
                 <div class="fb-good">
                     <div class="fb-like" data-href="https://www.facebook.com/UniversalStudiosJapan" data-width=""
                         data-layout="standard" data-action="like" data-size="small" data-share="false"></div>
                 </div>
                 <!-- 桌機 -->
+                <!-- 社群的icon -->
+                <!-- flex水平 -->
                 <div class="sns-icon sns-icon-computer">
                     <div class="title">
                         公式SNSアカウントをフォロー！
                     </div>
                     <div class="icon">
                         <div class="twitter">
-                            <a href="JAVASCRIPT:VOID(0)">
+                            <a href="javascript:void(0)">
                                 <img src="./images/social-icon-twitter.png" alt="">
                             </a>
                         </div>
                         <div class="ig">
-                            <a href="JAVASCRIPT:VOID(0)">
+                            <a href="javascript:void(0)">
                                 <img src="./images/social-icon-instagram.png">
                             </a>
                         </div>
                         <div class="fb">
-                            <a href="JAVASCRIPT:VOID(0)">
+                            <a href="javascript:void(0)">
                                 <img src="./images/social-icon-facebook.png" alt="">
                             </a>
                         </div>
                         <div class="yt">
-                            <a href="JAVASCRIPT:VOID(0)">
+                            <a href="javascript:void(0)">
                                 <img src="./images/social-icon-youtube.png" alt="">
                             </a>
                         </div>
                         <div class="line">
-                            <a href="JAVASCRIPT:VOID(0)">
+                            <a href="javascript:void(0)">
                                 <img src="./images/social-icon-line.png" alt="">
                             </a>
                         </div>
@@ -1452,70 +1527,76 @@
             </div>
 
             <!-- 手機 -->
+            <!-- 獨佔一行 -->
             <div class="sns-icon sns-icon-mobile">
                 <div class="title">
                     公式SNSアカウントをフォロー！
                 </div>
                 <div class="icon">
                     <div class="twitter">
-                        <a href="JAVASCRIPT:VOID(0)">
+                        <a href="javascript:void(0)">
                             <img src="./images/social-icon-twitter.png" alt="">
                         </a>
                     </div>
                     <div class="ig">
-                        <a href="JAVASCRIPT:VOID(0)">
+                        <a href="javascript:void(0)">
                             <img src="./images/social-icon-instagram.png">
                         </a>
                     </div>
                     <div class="fb">
-                        <a href="JAVASCRIPT:VOID(0)">
+                        <a href="javascript:void(0)">
                             <img src="./images/social-icon-facebook.png" alt="">
                         </a>
                     </div>
                     <div class="yt">
-                        <a href="JAVASCRIPT:VOID(0)">
+                        <a href="javascript:void(0)">
                             <img src="./images/social-icon-youtube.png" alt="">
                         </a>
                     </div>
                     <div class="line">
-                        <a href="JAVASCRIPT:VOID(0)">
+                        <a href="javascript:void(0)">
                             <img src="./images/social-icon-line.png" alt="">
                         </a>
                     </div>
                 </div>
             </div>
 
+            <!-- 語言選擇區 -->
             <div class="language">
-                <p><a href="JAVASCRIPT:VOID(0)">日本語</a></p>
-                <p><a href="JAVASCRIPT:VOID(0)">ENGLISH</a></p>
-                <p><a href="JAVASCRIPT:VOID(0)">中文簡体字</a></p>
-                <p><a href="JAVASCRIPT:VOID(0)">한국어</a></p>
+                <p><a href="javascript:void(0)">日本語</a></p>
+                <p><a href="javascript:void(0)">ENGLISH</a></p>
+                <p><a href="javascript:void(0)">中文簡体字</a></p>
+                <p><a href="javascript:void(0)">한국어</a></p>
             </div>
+
+            <!-- 各式連結 -->
             <div class="various-links">
                 <ul>
-                    <li><a href="JAVASCRIPT:VOID(0)">イベントを探す</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">アトラクションを探す</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">フード＆レストラン</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">グッズ＆ショップ</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">ユニバーサル・トラベル</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">パートナーホテル</a></li>
+                    <li><a href="javascript:void(0)">イベントを探す</a></li>
+                    <li><a href="javascript:void(0)">アトラクションを探す</a></li>
+                    <li><a href="javascript:void(0)">フード＆レストラン</a></li>
+                    <li><a href="javascript:void(0)">グッズ＆ショップ</a></li>
+                    <li><a href="javascript:void(0)">ユニバーサル・トラベル</a></li>
+                    <li><a href="javascript:void(0)">パートナーホテル</a></li>
                 </ul>
                 <ul>
-                    <li><a href="JAVASCRIPT:VOID(0)">WEBチケットストア</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">Clubユニバーサル</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">団体・企業向けプログラム</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">学校団体向けプログラム</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">マーケティング・パートナーのご紹介</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">公式ソーシャルメディアアカウント一覧</a></li>
+                    <li><a href="javascript:void(0)">WEBチケットストア</a></li>
+                    <li><a href="javascript:void(0)">Clubユニバーサル</a></li>
+                    <li><a href="javascript:void(0)">団体・企業向けプログラム</a></li>
+                    <li><a href="javascript:void(0)">学校団体向けプログラム</a></li>
+                    <li><a href="javascript:void(0)">マーケティング・パートナーのご紹介</a></li>
+                    <li><a href="javascript:void(0)">公式ソーシャルメディアアカウント一覧</a></li>
                 </ul>
                 <ul>
-                    <li><a href="JAVASCRIPT:VOID(0)">企業情報</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">採用情報</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">エンターテイナー募集</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">よくあるご質問</a></li>
-                    <li><a href="JAVASCRIPT:VOID(0)">お問合わせ</a></li>
+                    <li><a href="javascript:void(0)">企業情報</a></li>
+                    <li><a href="javascript:void(0)">採用情報</a></li>
+                    <li><a href="javascript:void(0)">エンターテイナー募集</a></li>
+                    <li><a href="javascript:void(0)">よくあるご質問</a></li>
+                    <li><a href="javascript:void(0)">お問合わせ</a></li>
                 </ul>
             </div>
+
+            <!-- copyright -->
             <div class="copyright">
                 <p>
                     TM & © Universal Studios. All rights reserved.
@@ -1527,36 +1608,36 @@
                 <div>
                     <ul>
                         <li>
-                            <a href="JAVASCRIPT:VOID(0)">著作権と商標
+                            <a href="javascript:void(0)">著作権と商標
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="JAVASCRIPT:VOID(0)">
+                            <a href="javascript:void(0)">
                                 このサイトについて
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="JAVASCRIPT:VOID(0)">
+                            <a href="javascript:void(0)">
                                 交通アクセス
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="JAVASCRIPT:VOID(0)">
+                            <a href="javascript:void(0)">
                                 施設案内・安全管理
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="JAVASCRIPT:VOID(0)">
+                            <a href="javascript:void(0)">
                                 プライバシーポリシー
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="JAVASCRIPT:VOID(0)">
+                            <a href="javascript:void(0)">
                                 サイトマップ
                                 <i class="fas fa-chevron-right"></i>
                             </a>
@@ -1565,7 +1646,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- 底色 -->
         <div class="last-color"></div>
     </footer>
 

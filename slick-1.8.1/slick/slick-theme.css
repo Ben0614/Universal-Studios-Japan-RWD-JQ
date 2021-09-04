@@ -228,10 +228,12 @@
     position:relative;
 }
 
+/* 文字區背景色 */
 .usj-slick .text-wrap {
     background-color: #1c3385;
 }
 
+/* 文字區背景色 */
 .usj-slick .text {
     background-color: #1c3385;
     color: #fff;
@@ -248,10 +250,12 @@
     font-size: 14px;
 }
 
+/* 手機 */
 .usj-slick .small-pic {
     display: block;
 }
 
+/* 桌機 */
 .usj-slick .big-pic {
     display: none;
 }
@@ -261,10 +265,12 @@
         margin-bottom: 100px;
     }
 
+    /* 手機隱藏 */
     .usj-slick .small-pic {
         display: none;
     }
 
+    /* 桌機顯示 */
     .usj-slick .big-pic {
         display: block;
     }

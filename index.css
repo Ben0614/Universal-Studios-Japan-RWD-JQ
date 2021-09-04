@@ -14,19 +14,22 @@ img {
     max-width: 100%;
 }
 
+/* 設定高度佔位 */
 .header-wrap {
     height: 147px;
 }
 
+/* 頭部 */
 header {
     position: fixed;
     top: 0;
     left: 0;
     max-width: 100%;
     background: linear-gradient(#005fc9, #0471eb);
-    z-index: 10;
+    z-index: 100;
 }
 
+/* 預設container樣式 */
 .container {
     max-width: 1140px;
     margin: auto;
@@ -54,19 +57,22 @@ header .main {
     padding: 3px 15px;
 }
 
-
+/* 手機隱藏 */
 header .right {
     display: none;
 }
 
 /* 購物車等等icon */
+/* flex水平 */
 header .icon {
     display: flex;
 }
 
+/* 手機搜索 */
 header .small-search {
     position: fixed;
     top: 0;
+    /* 預設在螢幕外面，jq調回 */
     left: -100%;
     height: 100%;
     width: 75%;
@@ -76,7 +82,6 @@ header .small-search {
 }
 
 
-
 header .small-search label {
     font-weight: 500;
 }
@@ -84,7 +89,7 @@ header .small-search label {
 header .small-search input {
     height: 25px;
     width: 95%;
-    outline:1px solid #aaa;
+    outline: 1px solid #aaa;
 }
 
 header .small-search button {
@@ -105,10 +110,13 @@ header .logo {
     height: auto;
 }
 
+/* 桌機搜索 */
 header .big-search {
     display: none;
 }
 
+/* 漢堡選單條 */
+/* 預設在外面，jq調回 */
 header .ham-list {
     position: fixed;
     top: 0;
@@ -122,11 +130,14 @@ header .ham-list {
     transition: .3s;
 }
 
+/* 調回漢堡選單條和手機搜索框的class */
+/* left:0% */
 header .ham-list.left0,
 header .small-search.left0 {
     left: 0;
 }
 
+/* 漢堡選單條和手機搜索框的關閉X */
 header .ham-list .cross,
 .small-search .cross {
     position: absolute;
@@ -164,6 +175,7 @@ header .ham-list .language li {
     color: #0368d9;
 }
 
+/* 購票區域 */
 .buy-ticket a {
     display: flex;
     justify-content: space-between;
@@ -175,29 +187,36 @@ header .ham-list .language li {
     padding: 15px;
 }
 
-/* 點擊a就變色 */
+/* 點擊a就變底色 */
+/* jq添加這個class */
 .buy-ticket-mobile a.bgClick {
     background-color: #162b75;
 }
 
+/* 點擊a就變文字色 */
+/* jq添加這個class */
 .buy-ticket-mobile a.fontColor {
     color: #fff;
 }
 
+/* 向下箭頭icon */
 .buy-ticket .front,
 .buy-ticket .back {
     font-size: 25px;
 }
+
 
 .navbar-bg {
     display: none;
     background-color: #0368d9;
 }
 
+/* 手機購票系統選單條 */
 .buy-ticket-mobile .list {
     position: absolute;
     display: none;
     width: 100%;
+    /* 高度定死 */
     height: 750px;
     font-size: 14px;
     background-color: #fff;
@@ -217,6 +236,7 @@ header .ham-list .language li {
     background-color: #ccc;
 }
 
+/* 圖片大小 */
 .buy-ticket-mobile .list .item .pic {
     width: 70px;
     height: 70px;
@@ -226,9 +246,11 @@ header .ham-list .language li {
     margin-left: 20px;
 }
 
+/* item的文字區第一行字體加粗 */
 .navbar .right .list .item .text p:nth-child(1) {
     font-weight: 700;
 }
+
 
 .buy-ticket-mobile .list .alert-text {
     background-color: #162b75;
@@ -240,27 +262,30 @@ header .ham-list .language li {
 
 
 @media screen and (min-width: 992px) {
+
+    /* 修改高度 */
     .header-wrap {
         height: 148px;
     }
-
-    /* 70 */
 
     header {
         position: fixed;
         width: 100%;
     }
 
+    /* 桌機header往上移動消失 */
+    /* jq添加此class */
     .t70 {
         transform: translateY(-70px);
         transition: .5s;
     }
 
+    /* header往上消失 header-wrap高度修改*/
+    /* jq添加此class */
     .h70 {
         height: 70px;
         transition: .5s;
     }
-
 
     header .main {
         /* 背景色不同 */
@@ -276,6 +301,8 @@ header .ham-list .language li {
         width: 10%;
     }
 
+    /* 大搜索框 */
+    /* 點擊後顯示 */
     header .big-search {
         display: none;
         justify-content: flex-end;
@@ -339,17 +366,21 @@ header .ham-list .language li {
         margin: 0 10px;
     }
 
+    /* header的語言選擇區 */
+    /* 選單條定位在第一個div身上 */
     header .main .right .service div:nth-child(1) {
         position: relative;
-
     }
 
+    /* 語言選擇被點擊，添加border */
+    /* jq添加這個class */
     .service div:nth-child(1).border {
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 5px;
     }
 
+    /* 語言選單條 */
     header .main .right .service div ul {
         display: none;
         list-style: none;
@@ -359,6 +390,7 @@ header .ham-list .language li {
         width: 100%;
         background-color: #fff;
         z-index: 10;
+        outline: 1px solid #333;
     }
 
     header .main .right .service div ul li {
@@ -367,14 +399,17 @@ header .ham-list .language li {
         font-size: 13px;
     }
 
+    /* 觸碰時底色改變 */
     header .main .right .service div ul li:hover {
         background-color: #1e90ff;
     }
 
+    /* 桌機的營業時間 */
     header .service-time-computer {
         margin-left: 20px;
     }
 
+    /* 顯示navbar-bg */
     .navbar-bg {
         display: block;
         background-color: #0368d9;
@@ -387,10 +422,12 @@ header .ham-list .language li {
         padding: 0 15px;
     }
 
+    /* 螢幕下滑時顯示 */
     .navbar .logo {
         display: none;
     }
 
+    /* 左側五個項目 */
     .navbar .left {
         display: flex;
         align-items: center;
@@ -400,11 +437,8 @@ header .ham-list .language li {
     .navbar .left>div {
         display: flex;
         flex-wrap: wrap;
+        /* 各佔w20% */
         width: 20%;
-        /* margin: 0 5px; */
-    }
-
-    .navbar .left>div {
         position: relative;
         margin-left: 23px;
         padding: 15px 0;
@@ -415,20 +449,25 @@ header .ham-list .language li {
         color: #fff;
     }
 
-    /* 點擊a就變色 */
+    /* 點擊a就變底色 */
+    /* jq添加此class */
     .bgClick,
     .buy-ticket a.bgClick {
         background-color: #162b75;
     }
 
+    /* 點擊a就變文字色 */
+    /* jq添加此class */
     .buy-ticket a.fontColor {
         color: #fff;
     }
 
+    /* 手機板隱藏 */
     .buy-ticket-mobile {
         display: none;
     }
 
+    /* 左側選單條 */
     .navbar .left .list {
         display: none;
         position: absolute;
@@ -452,10 +491,13 @@ header .ham-list .language li {
         transition: .3s;
     }
 
+    /* 上下兩區域文字本身大小就不一樣，要分開設定 */
+    /* 觸碰時文字放大 */
     .navbar .left .list .top li:hover {
         font-size: 20px;
     }
 
+    /* 觸碰時文字放大 */
     .navbar .left .list .bottom li:hover {
         font-size: 16px;
     }
@@ -475,6 +517,7 @@ header .ham-list .language li {
         align-items: center;
     }
 
+    /* 購票區域，直接設定寬高 這樣點擊切換時大小才不會改變*/
     .navbar .buy-ticket a {
         display: flex;
         width: 200px;
@@ -486,6 +529,7 @@ header .ham-list .language li {
         padding-left: 15px;
     }
 
+    /* 購票選單條 */
     .navbar .right .list {
         position: absolute;
         display: none;
@@ -508,6 +552,7 @@ header .ham-list .language li {
         background-color: #ccc;
     }
 
+    /* 圖片大小 */
     .navbar .right .list .item .pic {
         width: 70px;
         height: 70px;
@@ -529,6 +574,7 @@ header .ham-list .language li {
         padding: 15px 0;
     }
 
+    /* 購物車和搜索 */
     .navbar .icon-computer {
         display: flex;
         margin-left: 10px;
@@ -547,7 +593,6 @@ header .ham-list .language li {
     padding: 10px;
 }
 
-
 .quick-link .item-group {
     display: flex;
     flex-wrap: wrap;
@@ -565,6 +610,8 @@ header .ham-list .language li {
     border-bottom: 1px solid #ccc;
 }
 
+/* 切圓角 順序是 左上 右上 右下 左下 */
+/* 切item的圓角，觸碰變底色時才會一起變 */
 .quick-link .item:nth-child(1) {
     border-radius: 30px 0 0 0;
 }
@@ -581,10 +628,12 @@ header .ham-list .language li {
     border-radius: 0 0 30px 0;
 }
 
+/* 觸碰變底色 */
 .quick-link .item:hover {
     background-color: #1c3385;
 }
 
+/* 觸碰變文字色 */
 .quick-link .item:hover .title {
     color: #fff;
 }
@@ -665,30 +714,35 @@ header .ham-list .language li {
         border-bottom: 0;
     }
 
+    /* 雙數加右邊框 */
     .quick-link .item:nth-child(even) {
         border-right: 1px solid #ccc;
     }
 
+    /* 最後一個item不加右邊框 */
     .quick-link .item:nth-child(6) {
         border-right: 0;
     }
 
+    /* 第一個切圓角 左上 左下*/
     .quick-link .item:nth-child(1) {
         border-radius: 30px 0 0 30px;
     }
 
+    /* 取消手機版的圓角 */
     .quick-link .item:nth-child(2) {
         border-radius: 0;
     }
 
+    /* 取消手機版的圓角 */
     .quick-link .item:nth-child(5) {
         border-radius: 0;
     }
 
+    /* 最後一個切圓角 右上 右下*/
     .quick-link .item:nth-child(6) {
         border-radius: 0 30px 30px 0;
     }
-
 
 }
 
@@ -734,6 +788,7 @@ header .ham-list .language li {
     padding-left: 30px;
 }
 
+/* alert的詳細和pickup的item標題 共用文字樣式*/
 .alert .alert-area .content p a,
 .alert .notify-area .content li a,
 .pickup .item-group .item p a {
@@ -756,6 +811,7 @@ header .ham-list .language li {
     border: 1px solid #ccc;
     padding-bottom: 80px;
     margin-bottom: 15px;
+    /* 切圓角 */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
@@ -775,6 +831,7 @@ header .ham-list .language li {
     margin-bottom: 5px;
 }
 
+/* 右下角的翻頁按紐 */
 .pickup .item-group .item .read,
 .pickup .item-group .item .return {
     position: absolute;
@@ -787,11 +844,12 @@ header .ham-list .language li {
     cursor: pointer;
 }
 
+/* .back的返回按紐 */
 .pickup .item-group .item .return {
-
     background: linear-gradient(to bottom right, hsla(0, 0%, 89%, .6) 0, hsla(0, 0%, 89%, .6) 50%, #fff 0, #fff);
 }
 
+/* 翻頁和返回裡面icon */
 .pickup .item-group .item .read .circle,
 .pickup .item-group .item .return .arrow {
     position: absolute;
@@ -804,6 +862,7 @@ header .ham-list .language li {
     color: #0368d9;
 }
 
+/* .back頁面 */
 .pickup .item-group .item .back {
     position: absolute;
     display: none;
@@ -854,12 +913,13 @@ header .ham-list .language li {
     color: #333;
 }
 
-
+/* 手機的後兩個item */
 .info .item-group .small {
     display: flex;
     justify-content: space-between;
 }
 
+/* item寬 */
 .info .item-group .small .item {
     width: calc(50% - 10px);
 }
@@ -867,7 +927,6 @@ header .ham-list .language li {
 .info .item-group .small .item .text {
     height: 180px;
 }
-
 
 .info .item-group .item {
     margin-bottom: 40px;
@@ -898,12 +957,13 @@ header .ham-list .language li {
     color: #fff;
 }
 
+/* 桌機隱藏 */
 .info .item-group .item-computer {
     display: none;
 }
 
 @media screen and (min-width: 992px) {
-
+    /* 水平排列 */
     .pickup .item-group {
         display: flex;
         flex-wrap: wrap;
@@ -923,6 +983,7 @@ header .ham-list .language li {
         justify-content: space-between;
     }
 
+    /* 桌機是平均大小，因此small隱藏 */
     .info .item-group .small {
         display: none;
     }
@@ -931,6 +992,7 @@ header .ham-list .language li {
         display: block;
     }
 
+    /* 平均分配寬 */
     .info .item-group .item {
         width: 33.3333%;
         margin-left: 20px;
@@ -961,12 +1023,13 @@ header .ham-list .language li {
 
 .about-banner .item {
     display: flex;
+    /* 圖片文字垂直 */
     flex-direction: column;
     align-items: center;
     width: calc(25% - 5px);
 }
 
-/* 圓圈大小 */
+/* 白色圓圈 */
 .about-banner .pic {
     display: flex;
     justify-content: center;
@@ -980,6 +1043,7 @@ header .ham-list .language li {
     transition: 0.3s;
 }
 
+/* 觸碰變色 */
 .about-banner .item:hover .pic {
     background-color: #1f3681;
     border: 1px solid #fff
@@ -1099,11 +1163,13 @@ header .ham-list .language li {
 }
 
 @media screen and (min-width: 992px) {
+    /* 水平排列 */
     .sns-article .container {
         display: flex;
         justify-content: space-between;
     }
 
+    /* 平均寬 */
     .sns-article .twitter,
     .sns-article .ig,
     .sns-article .fan {
@@ -1134,7 +1200,6 @@ footer a {
     font-weight: 700;
 }
 
-/* 按讚 */
 .fb-good,
 .sns-icon,
 .language,
@@ -1146,6 +1211,7 @@ footer a {
 }
 
 /* 設定按讚寬度 */
+/* 直接定死，太大會爆版 */
 .fb-good span,
 .fb-good iframe {
     max-width: 340px;
@@ -1156,6 +1222,7 @@ footer a {
     justify-content: space-between;
 }
 
+/* 標題寬60% */
 .sns-icon .title {
     width: 60%;
     font-size: 20px;
@@ -1163,6 +1230,7 @@ footer a {
     color: #333;
 }
 
+/* icon區寬40% */
 .sns-icon .icon {
     width: 40%;
     display: flex;
@@ -1174,6 +1242,7 @@ footer a {
     margin: 0 5px 5px;
 }
 
+/* 桌機隱藏 */
 .sns-icon-computer {
     display: none;
 }
@@ -1205,6 +1274,7 @@ footer a {
     margin-left: 5px;
 }
 
+/* 底部藍色 */
 .last-color {
     width: 100%;
     height: 40px;
@@ -1213,6 +1283,7 @@ footer a {
 
 @media screen and (min-width: 992px) {
 
+    /* 刪除上下bottom，因為桌機版兩個放在同一行，讓父層添加border即可 */
     .fb-good,
     .sns-icon {
         padding: 25px 15px;
@@ -1225,16 +1296,18 @@ footer a {
         align-items: center;
     }
 
-
+    /* 隱藏手機 */
     .sns-icon-mobile {
         display: none;
     }
 
+    /* 顯示手機 */
     .sns-icon-computer {
         display: flex;
         align-items: center;
     }
 
+    /* fb-good  sns-icon 的父層*/
     .sns-area {
         display: flex;
         justify-content: space-between;
@@ -1259,14 +1332,17 @@ footer a {
         margin: 0 5px 5px;
     }
 
+    /* 語言區 靠左 */
     .language {
         justify-content: flex-start;
     }
 
+    /* 除了第一個p外，其他p都添加ml */
     .language p~p {
         margin-left: 20px;
     }
 
+    /* various-links下有三個ul，水平排列 */
     .various-links {
         display: flex;
         justify-content: space-between;
@@ -1282,11 +1358,13 @@ footer a {
         justify-content: space-between;
     }
 
+    /* 左側文字w25% */
     .copyright>p {
         width: 25%;
         line-height: 1.2rem;
     }
 
+    /* 右側水平垂直對齊 */
     .copyright>div {
         display: flex;
         justify-content: center;
@@ -1294,6 +1372,7 @@ footer a {
         width: 65%;
     }
 
+    /* 右側內部文字水平垂直對齊 */
     .copyright>div ul {
         display: flex;
         justify-content: center;
