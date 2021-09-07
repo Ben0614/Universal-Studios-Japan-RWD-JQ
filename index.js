@@ -29,23 +29,31 @@ $(function () {
             if ($(window).scrollTop() > 300) {
                 $('header').addClass('t70');
                 $('.header-wrap').addClass('h70');
-                $('.navbar .logo').fadeIn(150)
+                $('.navbar .logo').slideDown(300)
             } else {
                 $('header').removeClass('t70');
                 $('.header-wrap').removeClass('h70');
-                $('.navbar .logo').fadeOut(150)
+                $('.navbar .logo').slideUp(300)
+            }
+
+            // 高度分開，預防header回來時上下跳動
+            if ($(window).scrollTop() > 400) {
+                $('.header-wrap').addClass('h70');
+            } else {
+                $('.header-wrap').removeClass('h70');
             }
         }
+
     }
 
     // 手機 點擊叫出搜索框
-    $('.icon-mobile .search').on('click',function(){
+    $('.icon-mobile .search').on('click', function () {
         $('.small-search').addClass('left0');
-         $('.small-search input').focus();
+        $('.small-search input').focus();
     })
 
     // 點擊x關閉搜索框
-    $('.small-search .cross').on('click',function(){
+    $('.small-search .cross').on('click', function () {
         $('.small-search').removeClass('left0')
     })
 
