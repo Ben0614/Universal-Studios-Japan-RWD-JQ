@@ -67,7 +67,11 @@ $(function () {
             $(this).addClass('border');
             $('.service div ul').slideDown(200);
         }
+    })
 
+    // 防止冒泡 否則點擊選單也會觸發父層的click
+    $('.service div:nth-child(1) .l-option').on('click', function (e) {
+        e.stopPropagation();
     })
 
     // 大搜索框
