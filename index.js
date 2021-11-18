@@ -18,7 +18,6 @@ $(function () {
     // 螢幕滑動時觸發
     $(window).scroll(function () {
         headerHide()
-
     })
 
     // 桌機 螢幕滑動超過300 header隱藏 
@@ -28,11 +27,9 @@ $(function () {
         if ($(window).width() > 992) {
             if ($(window).scrollTop() > 300) {
                 $('header').addClass('t70');
-                $('.header-wrap').addClass('h70');
                 $('.navbar .logo').slideDown(300)
             } else {
                 $('header').removeClass('t70');
-                $('.header-wrap').removeClass('h70');
                 $('.navbar .logo').slideUp(300)
             }
 
