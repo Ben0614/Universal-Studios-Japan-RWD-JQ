@@ -79,7 +79,8 @@ header .small-search {
     width: 75%;
     padding: 50px 20px;
     background-color: #fff;
-    transition: .5s;
+    transition: .3s;
+    z-index: 200;
 }
 
 
@@ -111,7 +112,6 @@ header .logo {
     height: auto;
 }
 
-/* 桌機搜索 */
 header .big-search {
     display: none;
 }
@@ -189,7 +189,7 @@ header .ham-list .language li {
 }
 
 /* 點擊a就變底色 */
-/* jq添加這個class */
+/* 添加這個class */
 .buy-ticket-mobile a.bgClick {
     background-color: #162b75;
 }
@@ -214,14 +214,16 @@ header .ham-list .language li {
 
 /* 手機購票系統選單條 */
 .buy-ticket-mobile .list {
+    height: 0;
     position: absolute;
-    display: none;
     width: 100%;
     /* 高度定死 */
     height: 750px;
     font-size: 14px;
     background-color: #fff;
     z-index: 100;
+    overflow: hidden;
+    transition: .3s
 }
 
 .buy-ticket-mobile .list .item {
@@ -278,14 +280,14 @@ header .ham-list .language li {
     /* jq添加此class */
     .t70 {
         transform: translateY(-70px);
-        transition: .5s;
+        transition: .3s;
     }
 
     /* header往上消失 header-wrap高度修改*/
     /* jq添加此class */
     .h70 {
         height: 70px;
-        transition: .5s;
+        transition: .3s;
     }
 
     header .main {
@@ -305,13 +307,15 @@ header .ham-list .language li {
     /* 大搜索框 */
     /* 點擊後顯示 */
     header .big-search {
-        display: none;
+        height: 0;
         justify-content: flex-end;
         margin-bottom: 10px;
+        overflow: hidden;
     }
 
     header .big-search.flex {
         display: flex;
+        transition: .3s;
     }
 
     header .big-search .container {
@@ -330,6 +334,7 @@ header .ham-list .language li {
         width: 500px;
         height: 35px;
         margin-left: 10px;
+        padding-left: 5px;
     }
 
     header .big-search button {
@@ -365,7 +370,7 @@ header .ham-list .language li {
 
     header .main .right .service p {
         /* 讓文字垂直置中 */
-        display:flex;
+        display: flex;
         align-items: center;
         margin: 0 10px;
     }
@@ -390,15 +395,16 @@ header .ham-list .language li {
 
     /* 語言選單條 */
     header .main .right .service div ul {
-        display: none;
         list-style: none;
         position: absolute;
         top: 100%;
         left: 0;
+        height: 0;
         width: 100%;
         background-color: #fff;
         z-index: 10;
-        outline: 1px solid #333;
+        overflow: hidden;
+        transition: .3s
     }
 
     header .main .right .service div ul li {
@@ -415,7 +421,7 @@ header .ham-list .language li {
     /* 桌機的營業時間 */
     header .service-time-computer {
         /* 讓文字垂直置中 */
-        display:flex;
+        display: flex;
         align-items: center;
         margin-left: 20px;
     }
@@ -426,16 +432,33 @@ header .ham-list .language li {
         background-color: #0368d9;
     }
 
+
+
     .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 15px;
+        /* 在這裡加overflow list會出不來 */
+        /* overflow:hidden; */
+    }
+
+    /* 多加一層wrap 為了隱藏logo */
+    .navbar .logo-wrap {
+        width: 10%;
+        overflow: hidden;
     }
 
     /* 螢幕下滑時顯示 */
     .navbar .logo {
-        display: none;
+        width: 100%;
+        height: 100%;
+        transform: translateY(100px);
+        transition: .3s;
+    }
+
+    .navbar .logo.show {
+        transform: translateY(0);
     }
 
     /* 左側五個項目 */
@@ -453,6 +476,7 @@ header .ham-list .language li {
         position: relative;
         margin-left: 23px;
         padding: 15px 0;
+        transition: .3s;
     }
 
     .navbar .left a {
@@ -461,7 +485,7 @@ header .ham-list .language li {
     }
 
     /* 點擊a就變底色 */
-    /* jq添加此class */
+    /* 添加此class */
     .bgClick,
     .buy-ticket a.bgClick {
         background-color: #162b75;
@@ -480,19 +504,22 @@ header .ham-list .language li {
 
     /* 左側選單條 */
     .navbar .left .list {
-        display: none;
         position: absolute;
         top: 100%;
         left: 5px;
+        height: 0;
         width: 300px;
-        padding: 15px 15px 0;
+        padding: 0 15px 0;
         background-color: #162b75;
         margin: 0 -5px;
         z-index: 100;
+        overflow: hidden;
+        transition: .3s
     }
 
     .navbar .left .list ul {
         list-style: none;
+        padding: 15px 0;
     }
 
     .navbar .left .list ul li {
@@ -543,11 +570,13 @@ header .ham-list .language li {
     /* 購票選單條 */
     .navbar .right .list {
         position: absolute;
-        display: none;
+        height: 0;
         width: 400px;
         font-size: 14px;
         background-color: #fff;
         z-index: 100;
+        overflow: hidden;
+        transition: .3s
     }
 
     .navbar .right .list .item {
@@ -876,15 +905,14 @@ header .ham-list .language li {
 /* .back頁面 */
 .pickup .item-group .item .back {
     position: absolute;
-    display: none;
-    top: 0;
-    left: 0;
+    top: -100%;
+    left: -100%;
     width: 100%;
     height: 100%;
     background-color: #0368d9;
     padding: 20px;
     color: #fff;
-
+    transition: .3s;
 }
 
 .pickup .item-group .item .back h4 {
@@ -974,6 +1002,7 @@ header .ham-list .language li {
 }
 
 @media screen and (min-width: 992px) {
+
     /* 水平排列 */
     .pickup .item-group {
         display: flex;
@@ -1174,6 +1203,7 @@ header .ham-list .language li {
 }
 
 @media screen and (min-width: 992px) {
+
     /* 水平排列 */
     .sns-article .container {
         display: flex;
