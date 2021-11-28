@@ -123,6 +123,7 @@ navabar_link.forEach((link) => {
 const ham = document.querySelector('.ham')
 const ham_list = document.querySelector('header .ham-list')
 const ham_list_cross = document.querySelector('.ham-list .cross')
+const language_li = document.querySelectorAll('.ham-list .language li')
 
 // 漢堡選單 點開啟選單條
 ham.addEventListener('click', () => {
@@ -131,6 +132,13 @@ ham.addEventListener('click', () => {
 // 點x關閉選單條
 ham_list_cross.addEventListener('click', () => {
     ham_list.classList.remove('left0')
+})
+
+// 點漢堡選單條裡的li就讓底下的單選紐圈選
+language_li.forEach((li)=>{
+    li.addEventListener('click',()=>{
+        li.lastElementChild.checked = true
+})
 })
 
 
